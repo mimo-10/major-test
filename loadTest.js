@@ -7,26 +7,26 @@ export let options = {
 	scenarios: {
 		test_50_connections: {
 			executor: "constant-arrival-rate",
-			rate: 50, // requests per second (20,000 RPS * 50 = 1M over 50 seconds)
+			rate: 100, // requests per second (20,000 RPS * 50 = 1M over 50 seconds)
 			duration: "50s", // Run for 50 seconds
-			preAllocatedVUs: 2000, // Number of Virtual Users
-			maxVUs: 2000, // Max Virtual Users
+			preAllocatedVUs: 500, // Number of Virtual Users
+			maxVUs: 500, // Max Virtual Users
 		},
 		test_100_connections: {
 			startTime: "1m", // Start after the first test
 			executor: "constant-arrival-rate",
-			rate: 1000, // requests per second (10,000 RPS * 100 = 1M over 100 seconds)
+			rate: 100, // requests per second (10,000 RPS * 100 = 1M over 100 seconds)
 			duration: "100s", // Run for 100 seconds
-			preAllocatedVUs: 2000, // Number of Virtual Users
-			maxVUs: 2000, // Max Virtual Users
+			preAllocatedVUs: 500, // Number of Virtual Users
+			maxVUs: 500, // Max Virtual Users
 		},
 		test_300_connections: {
 			startTime: "150s", // Start after the second test
 			executor: "constant-arrival-rate",
 			rate: 100, // requests per second (3,333 RPS * 300 = 1M over 300 seconds)
 			duration: "60s", // Run for 300 seconds
-			preAllocatedVUs: 2000, // Number of Virtual Users
-			maxVUs: 2000, // Max Virtual Users
+			preAllocatedVUs: 500, // Number of Virtual Users
+			maxVUs: 500, // Max Virtual Users
 		},
 	},
 };
@@ -52,7 +52,7 @@ export default function () {
 	const teacherId = "66e49740059a89c051d4dccf";
 	const url = `http://34.1.0.255:4000/api/classroom/student`;
 	// const url = `http://127.0.0.1:4000/api/classroom/student`;
-	// const url = `https://major.education/api/teacher/${teacherId}`;
+	// const url = `http://34.1.0.255:4000/api/teacher/${teacherId}`;
 
 	const params = {
 		headers: {
@@ -68,5 +68,5 @@ export default function () {
 		"is response not empty": (r) => r.body !== "",
 	});
 
-	// sleep(1); // Simulate real-user pause
+	sleep(1); // Simulate real-user pause
 }
