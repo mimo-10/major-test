@@ -12,8 +12,8 @@ export let options = {
 			// preAllocatedVUs: 50, // Number of Virtual Users
 			// // maxVUs: 50, // Max Virtual Users,
 			executor: "per-vu-iterations",
-			vus: 5000,
-			iterations: 6,
+			vus: 10000,
+			iterations: 10,
 			maxDuration: "30s",
 		},
 		// test_100_connections: {
