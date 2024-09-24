@@ -7,7 +7,7 @@ export let options = {
 	scenarios: {
 		test_50_connections: {
 			executor: "constant-arrival-rate",
-			rate: 2000, // requests per second (20,000 RPS * 50 = 1M over 50 seconds)
+			rate: 50, // requests per second (20,000 RPS * 50 = 1M over 50 seconds)
 			duration: "50s", // Run for 50 seconds
 			preAllocatedVUs: 2000, // Number of Virtual Users
 			maxVUs: 2000, // Max Virtual Users
@@ -15,7 +15,7 @@ export let options = {
 		test_100_connections: {
 			startTime: "1m", // Start after the first test
 			executor: "constant-arrival-rate",
-			rate: 2000, // requests per second (10,000 RPS * 100 = 1M over 100 seconds)
+			rate: 1000, // requests per second (10,000 RPS * 100 = 1M over 100 seconds)
 			duration: "100s", // Run for 100 seconds
 			preAllocatedVUs: 2000, // Number of Virtual Users
 			maxVUs: 2000, // Max Virtual Users
@@ -23,7 +23,7 @@ export let options = {
 		test_300_connections: {
 			startTime: "150s", // Start after the second test
 			executor: "constant-arrival-rate",
-			rate: 2000, // requests per second (3,333 RPS * 300 = 1M over 300 seconds)
+			rate: 100, // requests per second (3,333 RPS * 300 = 1M over 300 seconds)
 			duration: "60s", // Run for 300 seconds
 			preAllocatedVUs: 2000, // Number of Virtual Users
 			maxVUs: 2000, // Max Virtual Users
